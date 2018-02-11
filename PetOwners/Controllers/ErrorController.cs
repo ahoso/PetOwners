@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace PetOwners.Controllers
 {
+    /// <summary>
+    /// Errror Contoller
+    /// </summary>
     public class ErrorController : Controller
     {
+        /// <summary>
+        /// Controller to direct to error page
+        /// </summary>
+        /// <returns></returns>
         [HandleError]
         public ActionResult Index()
         {

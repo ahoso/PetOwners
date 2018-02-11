@@ -9,7 +9,7 @@ using System.Net.Http.Headers;
 namespace DataAccess.WebApi
 {
     /// <summary>
-    /// AGL People WebAPI accessor implements IDataAccessor interface
+    /// AGL People WebAPI accessor implements IDataAccessor <see langword="interface"/>
     /// </summary>
     public class AglPeopleWebApiAccessor : IDataAccessor
     {
@@ -28,10 +28,10 @@ namespace DataAccess.WebApi
             client = new HttpClient
             {
                 // set WebAPI URL.
-                BaseAddress = new Uri(WebApiUrl)
+                BaseAddress = new Uri(uriString: WebApiUrl)
             };
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MediaType));
+            client.DefaultRequestHeaders.Accept.Add(item: new MediaTypeWithQualityHeaderValue(MediaType));
         }
 
         /// <summary>
@@ -45,9 +45,8 @@ namespace DataAccess.WebApi
                 // Get information from WebAPI
                 try
                 {
-                    var response = client.GetAsync(WebApiUrl).Result;
-                    response.EnsureSuccessStatusCode();
-                    var result = response.Content.ReadAsStringAsync().Result;
+                    client.GetAsync(WebApiUrl).Result.EnsureSuccessStatusCode();
+                    var result = client.GetAsync(WebApiUrl).Result.Content.ReadAsStringAsync().Result;
                     var serializedResult = JsonConvert.DeserializeObject<List<Owner>>(result);
 
                     // return serialized result, unless result is null.

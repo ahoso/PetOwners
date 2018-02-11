@@ -15,10 +15,7 @@ namespace Repository
         public PetOwnerRepository(IDataAccessor accessor) => _accessor = accessor;
 
         // Get list of owners' information with their pet from Data accessor
-        public IEnumerable<Owner> GetOwners()
-        {
-            return _accessor.GetOwners();
-        }
+        public IEnumerable<Owner> GetOwners() => _accessor.GetOwners();
 
     }
 }

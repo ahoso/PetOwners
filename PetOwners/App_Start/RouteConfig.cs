@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace PetOwners
@@ -14,7 +15,12 @@ namespace PetOwners
         /// <param name="routes">Collection of registering routes</param>
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            if (routes == null)
+            {
+                throw new ArgumentNullException(nameof(routes));
+            }
+
+            routes.IgnoreRoute(url: "{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
                 name: "Default",

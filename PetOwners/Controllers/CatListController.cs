@@ -51,7 +51,7 @@ namespace MVC_Client.Controllers
             }
 
             // return View
-            return (cats != null) ? View("CatList", model: cats) : View("Error");
+            return (cats != null) ? View(viewName: "CatList", model: cats) : View("Error");
         }
 
     }
