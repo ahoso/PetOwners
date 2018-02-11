@@ -1,29 +1,23 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DataAccess.WebApi;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http;
-using System.Threading;
-using Moq;
+using System.Web.Mvc;
 using PetOwners.Core.Domain;
+using Moq;
 
-namespace DataAccess.WebApi.Tests
+namespace MVC_Client.Controllers.Tests
 {
     /// <summary>
-    /// Test AglPeopleWebApiAccessor with Mock
+    /// Test CatList Controller
     /// </summary>
     [TestClass()]
-    public class AglPeopleWebApiAccessorTests
+    public class CatListControllerTests
     {
-        public IDataAccessor _accessor;
-
         /// <summary>
-        /// Constructor to setup Mock
+        /// Mock PetOwner Repository for use in testing
         /// </summary>
-        public AglPeopleWebApiAccessorTests()
+        public IPetOwnerRepository _repository;
+
+        public CatListControllerTests()
         {
             // create some mock pet owners to play with
             IEnumerable<Owner> owners = new List<Owner>
@@ -33,30 +27,35 @@ namespace DataAccess.WebApi.Tests
                     new Owner { Name = "Mary", Age = 31, Gender = "Female", Pets = GetMaryPets()}
                 };
 
-            // Mock the Web API data access 
-            Mock<IDataAccessor> mockAglPeopleWebApiAccessor = new Mock<IDataAccessor>();
+            // Mock the PetOwner Repository 
+            Mock<IPetOwnerRepository> mockProductRepository = new Mock<IPetOwnerRepository>();
 
             // Return all the pet owners
-            mockAglPeopleWebApiAccessor.Setup(mr => mr.GetOwners()).Returns(owners);
+            mockProductRepository.Setup(mr => mr.GetOwners()).Returns(owners);
 
             // Complete the setup of Mock Repository
-            _accessor = mockAglPeopleWebApiAccessor.Object;
+            _repository = mockProductRepository.Object;
+
         }
         // private methods to set pets for Mock owners
         private IEnumerable<Pet> GetJamesPets() => new List<Pet> { new Pet { Name = "Black", Type = "Sheep" } };
         private IEnumerable<Pet> GetChrisPets() => new List<Pet> { new Pet { Name = "Coco", Type = "Cow" } };
-        private IEnumerable<Pet> GetMaryPets() => new List<Pet> { new Pet { Name = "Mocha", Type = "Turtle" } };
+        private IEnumerable<Pet> GetMaryPets() => new List<Pet> { new Pet { Name = "Maccha", Type = "Cat" } };
 
         /// <summary>
-        /// Test Accessor can return Pet Owners
+        /// Test to return catlist when data exist
         /// </summary>
-        [TestMethod]
-        public void CanGetOwnerListTest()
+        [TestMethod()]
+        public void ControllerReturnCatListViewTest()
         {
+            var _controller = new CatListController(_repository);
+            var _result = _controller.CatList() as ViewResult;
 
-            var list = _accessor.GetOwners();
-            Assert.IsNotNull(list); // Test if null
-
+            Assert.AreEqual("CatList", _result.ViewName);
         }
+
+
+
+
     }
 }
