@@ -1,0 +1,41 @@
+﻿@using PetOwners.Core.Domain
+@model IEnumerable<Cat>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cat List</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/functions.js"></script>
+</head>
+<body>
+
+    <h1 id="title">AGL Coding Challenge</h1>
+    <div id="task">A list of all the cats in alphabetical order under a heading of the gender of their owner.</div>
+    <div id="catList"></div>
+
+    <script type="text/javascript">
+
+        $(document).ready()
+        {
+            // list of cat's names with owner's gender
+            var listAll = @Html.Raw(Json.Encode(Model));
+
+            // list of owner's genders
+            var listOwnerGenders = @Html.Raw(Json.Encode(Model.Select(i=>i.OwnerGender).Distinct().ToList()));
+            
+            // call custom function to display list of cat names
+            DisplayCatList(listOwnerGenders, listAll);
+        };
+
+    </script>
+</body>
+
+</html>
+
