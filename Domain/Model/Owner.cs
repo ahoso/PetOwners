@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 namespace PetOwners.Core.Domain
 {
     /// <summary>
@@ -27,6 +28,6 @@ namespace PetOwners.Core.Domain
         /// <summary>
         /// Pets owner owns
         /// </summary>
-        public Pet[] Pets { get; set; }
+        public IEnumerable<Pet> Pets { get; set; }
     }
 }

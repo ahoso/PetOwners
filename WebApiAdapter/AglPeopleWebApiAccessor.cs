@@ -48,7 +48,7 @@ namespace DataAccess.WebApi
                 var serializedResult = JsonConvert.DeserializeObject<List<Owner>>(result);
 
                 // return serialized result, unless result is null.
-                return (serializedResult != null)? serializedResult : null;
+                return serializedResult ?? null;
             }
         }
 
