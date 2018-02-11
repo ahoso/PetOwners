@@ -43,12 +43,20 @@ namespace DataAccess.WebApi
             using (var httpClient = new HttpClient())
             {
                 // Get information from WebAPI
-                var response = client.GetAsync(WebApiUrl).Result;
-                var result = response.Content.ReadAsStringAsync().Result;
-                var serializedResult = JsonConvert.DeserializeObject<List<Owner>>(result);
+                try
+                {
+                    var response = client.GetAsync(WebApiUrl).Result;
+                    response.EnsureSuccessStatusCode();
+                    var result = response.Content.ReadAsStringAsync().Result;
+                    var serializedResult = JsonConvert.DeserializeObject<List<Owner>>(result);
 
-                // return serialized result, unless result is null.
-                return serializedResult ?? null;
+                    // return serialized result, unless result is null.
+                    return serializedResult ?? null;
+                }
+                catch (Exception ex)
+                {
+                     throw new Exception("Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message);
+                }
             }
         }
 
