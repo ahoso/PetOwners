@@ -1,0 +1,7 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+ul.dotList li {
+    list-style-type: disc;
+}

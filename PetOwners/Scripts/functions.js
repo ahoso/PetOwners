@@ -19,7 +19,7 @@ function DisplayCatList(listOwnerGenders, listAll)
     $.each(listOwnerGenders, function (idx, gender) {
 
         // Set list header with owner's gender
-        $("#catList").append("<p class='listHeader'>" + gender + "</p>");
+        $("#catList").append("<h4>" + gender + "</h4>");
 
         // Filter list of Cat's name by owner's gender
         var listCats = listAll.filter(function (cat) {
@@ -28,13 +28,15 @@ function DisplayCatList(listOwnerGenders, listAll)
 
         // sort array by cat name in alphabetical order
         listCats.sort(SortByName);
-
+    
         // loop through appending cat's name to the list 
-        var catNames = "";
+        var catNames = "<ul class='dotList'>";
         $.each(listCats, function (idx, cat) {
-            catNames += "<li class='listItem'>" + cat.Name + "</li>";
+            catNames += "<li>" + cat.Name + "</li>";
         });
+        catNames += "</ul>";
         $("#catList").append(catNames);
+       
     })
 }
 
