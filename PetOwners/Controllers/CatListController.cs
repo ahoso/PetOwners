@@ -1,7 +1,10 @@
 ﻿using PetOwners.Core.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Microsoft.ApplicationInsights;
+using PetOwners.Const;
 
 namespace MVC_Client.Controllers
 {
@@ -10,6 +13,7 @@ namespace MVC_Client.Controllers
     /// </summary>
     public class CatListController : Controller
     {
+        TelemetryClient _telemetry = new TelemetryClient();
         // Repository interface
         IPetOwnerRepository _iPetOwnerRepository;
 
@@ -45,8 +49,14 @@ namespace MVC_Client.Controllers
                            OwnerGender = owner.Gender
                        };
             }
-            catch
+            catch(Exception ex)
             {
+                Dictionary<string, string> properties = new Dictionary<string, string>();
+                properties.Add(Logging.Location, "CatListController");
+                properties.Add(Logging.Message, ex.Message);
+                properties.Add(Logging.StackTrace, ex.StackTrace);
+                _telemetry.TrackException(ex, properties);
+
                 cats = null;
             }
 

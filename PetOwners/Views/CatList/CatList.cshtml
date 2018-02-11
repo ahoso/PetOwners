@@ -1,4 +1,6 @@
 ﻿@using PetOwners.Core.Domain
+@using System.Configuration
+
 @model IEnumerable<Cat>
 
 @{
@@ -14,6 +16,8 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/functions.js"></script>
     <link href="~/Styles/CustomStyleSheet.css" rel="stylesheet" />
+
+
 </head>
 <body>
 
@@ -32,7 +36,7 @@
 
             // list of owner's genders
             var listOwnerGenders = @Html.Raw(Json.Encode(Model.Select(i=>i.OwnerGender).Distinct().ToList()));
-            
+
             // call custom function to display list of cat names
             DisplayCatList(listOwnerGenders, listAll);
         };

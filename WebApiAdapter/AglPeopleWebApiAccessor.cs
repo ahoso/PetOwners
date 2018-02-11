@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.ApplicationInsights;
+using Newtonsoft.Json;
+using PetOwners.Const;
 using PetOwners.Core.Domain;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,9 @@ namespace DataAccess.WebApi
     /// </summary>
     public class AglPeopleWebApiAccessor : IDataAccessor
     {
+        // telemetry client to be used to log into application insights
+        TelemetryClient _telemetry = new TelemetryClient();
+
         // Static strings from Configuration 
         private static readonly string MediaType = ConfigurationManager.AppSettings["MediaType"].ToString();
         private static readonly string WebApiUrl = ConfigurationManager.AppSettings["WebApiUrl"].ToString();
@@ -54,7 +59,14 @@ namespace DataAccess.WebApi
                 }
                 catch (Exception ex)
                 {
-                     throw new Exception("Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message);
+                    // Log exception in to application insights
+                    Dictionary<string, string> properties = new Dictionary<string, string>();
+                    properties.Add(Logging.Location, "AglPeopleWebApiAccessorn - GetOwner");
+                    properties.Add(Logging.Message, ex.Message);
+                    properties.Add(Logging.StackTrace, ex.StackTrace);
+                    _telemetry.TrackException(ex, properties);
+
+                    throw new Exception("Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message);
                 }
             }
         }

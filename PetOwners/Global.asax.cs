@@ -1,6 +1,8 @@
-﻿using System.Web;
+﻿using System.Configuration;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace PetOwners
 {
@@ -14,6 +16,9 @@ namespace PetOwners
         /// </summary>
         protected void Application_Start()
         {
+            // set Application Insights key for server side analysis
+            TelemetryConfiguration.Active.InstrumentationKey = ConfigurationManager.AppSettings["TelemetryKey"].ToString();
+
             // Register areas
             AreaRegistration.RegisterAllAreas();
 
