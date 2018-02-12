@@ -56,7 +56,7 @@ The programming language is open to a developer, so I choosed technologies below
 
 ## Testing
 
- ### Unit
+ ### Unit Tests
 Unit Tests are set up and implemented using NUnit 3+ with Moq 4+.
 To make tests avaiable and visualise in Test Explorer, used NUnit Test Adapter.
 
