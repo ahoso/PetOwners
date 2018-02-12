@@ -86,7 +86,7 @@ Properties --> INSTRUMENTATION KEY --> Copy to notepad
 2. Select Availability
 3. Create new Test and configure 
 
-![Availability Monitoring](./READMEImages/AvailabilityMonitoring.png "Monitoring...")
+![Availability Monitoring](https://github.com/ahoso/PetOwners/blob/master/READMEImages/AvailabilityMonitoring.PNG "Monitoring...")
 
 ## Deployment
 
