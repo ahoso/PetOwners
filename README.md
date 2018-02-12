@@ -7,21 +7,19 @@ Required Output Example
 
 ![Output Example](ReadMeImages/WebScreenShot.PNG)
 
+## Additional Packages Required
+
 The programming language is open to a developer, so I choosed technologies below to demonstrate my experience and knowledge with those techonologies.
 
 * Approach: Onion Architecture for unit test friendly, easy to extend with it's loose coupling, and cross cutting concerns.
-* Language: .net framework 4 with MVC 5 Web Application model along with jquery 3, html 5 and css 3. 
+* Language: .net framework 4+ with MVC 5+ Web Application model along with jquery 3+, html 5 and css 3. 
 * Dependency Injection: Unity Framework
-* Unit Test: Visual Studio Testing Framework
+* Testing: Visual Studio Testing Framework/NUnit
 * IDE: Visual Studio Enterprise 2017
 * Deployment: Azure Web Application http://petownermvc.azurewebsites.net/
 * Monitoring/Logging: Azure Application Insights
 
-## Getting Started
-
-Download solution and open solution file.
-
-### Additional Packages Required
+## Additional Packages Required
 
 * jQuery v3.3.1
 * Microsoft.ApplicationInsights v2.5.0
