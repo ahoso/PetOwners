@@ -100,6 +100,7 @@ Properties --> INSTRUMENTATION KEY --> Copy to notepad
 ```
 
 Track and Tracing Sample
+
 ![Track and Tracing](ReadMeImages/TraceAndTracking.PNG)
 
 
