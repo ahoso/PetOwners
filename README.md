@@ -106,7 +106,8 @@ Track and Tracing Sample
 
 ## Deployment
 
-This website is published to http://petownermvc.azurewebsites.net/
+Publiched to: http://petownermvc.azurewebsites.net/
+COnfiguration: Release
 
 ## Source Controll
 
