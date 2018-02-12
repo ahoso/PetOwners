@@ -7,7 +7,7 @@ Required Output Example
 
 ![Output Example](ReadMeImages/WebScreenShot.PNG)
 
-## Additional Packages Required
+## Technologies Used
 
 The programming language is open to a developer, so I choosed technologies below to demonstrate my experience and knowledge with those techonologies.
 
@@ -55,8 +55,8 @@ Or you can set live unit testing
 Test --> Live Unit Testing --> Start
 ```
 
-###Integration
-### Spec
+### Integration
+### 
 
 ## Logging and Monitoring
 
@@ -67,7 +67,7 @@ Azure Application Insights: ai_petowners_mvc (private subscription)
 
 If you want to set up error logging and availability monitoring in Azure, you need to setup your own Application Insights on your own subscription. If you do not want to set them up for now, you can ignore, and the application runs regardless.
 
-### Setup Azure Application Insights
+### Additional Custom Logging to Application Insights from MVC Web Application
 
 1. Create new Application Insights or add Application Insights from Web Appliation.
 ```
