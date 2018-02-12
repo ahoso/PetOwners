@@ -12,7 +12,7 @@ Required Output Example
 The programming language is open to a developer, so I choosed technologies below to demonstrate my experience and knowledge with those techonologies.
 
 * Approach: Onion Architecture for unit test friendly, easy to extend with it's loose coupling, and cross cutting concerns.
-* Language: .net framework 4+ with MVC 5+ Web Application model along with jquery 3+, html 5 and css 3. 
+* Language: .net framework 4+ with MVC 5+ Web Application model along with jquery 3+, html 5 and css 3 base. 
 * Dependency Injection: Unity 5+
 * Testing: NUnit 3+, Moq 4+
 * IDE: Visual Studio Enterprise 2017
@@ -57,7 +57,7 @@ The programming language is open to a developer, so I choosed technologies below
 ## Testing
 
  ### Unit
-Unit Tests are set up and implemented using NUnit with Moq.
+Unit Tests are set up and implemented using NUnit 3+ with Moq 4+.
 To make tests avaiable and visualise in Test Explorer, used NUnit Test Adapter.
 
 #### Test Result
@@ -68,14 +68,14 @@ To make tests avaiable and visualise in Test Explorer, used NUnit Test Adapter.
 
 ## Logging and Monitoring
 
-Azure Application Insights provides proactive alert and monitoring mechanism.
-Some simple monitoring and alert functions implemented for this project.
+Azure Application Insights provides proactive alert and monitoring functions.
+Some simple monitoring and alert notifications implemented for this project.
 
 * Logging exceptions, alerts, and custom information
 * Availability monitoring
 * Performance monitoring
 
-If you want to set up error logging and availability monitoring in Azure, you need to setup your own Application Insights on your own subscription. If you do not want to set them up for now, you can ignore, and the application runs regardless.
+If you want to set up error logging and availability monitoring in Azure, you need to setup your own Application Insights on your own subscription. Instruction as below. If you do not want to set them up for now, you can ignore, the application runs regardless.
 
 ### Setup Availability Monitoring
 
@@ -107,15 +107,15 @@ Properties --> INSTRUMENTATION KEY --> Copy to notepad
 ..\petowners\petowners\web.config --> <configuration> --> <appSettings> --> Update Value of "TelemetryKey"
 ```
 
-Track and Tracing Sample
+Tracking and Tracing Sample
 
 ![Track and Tracing](ReadMeImages/TraceAndTracking.PNG)
 
 
 ## Deployment
 
-Publiched to: http://petownermvc.azurewebsites.net/
-COnfiguration: Release
+Published to: http://petownermvc.azurewebsites.net/
+Configuration: Release
 
 ## Source Controll
 
