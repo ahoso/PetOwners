@@ -19,7 +19,7 @@ The programming language is open to a developer, so I choosed technologies below
 * Deployment: Azure Web Application http://petownermvc.azurewebsites.net/
 * Monitoring/Logging: Azure Application Insights
 
-## Additional Packages Required
+## Packages Used
 
 * jQuery v3.3.1
 * Microsoft.ApplicationInsights v2.5.0
@@ -69,6 +69,21 @@ Some simple monitoring and alert functions implemented for this project.
 
 If you want to set up error logging and availability monitoring in Azure, you need to setup your own Application Insights on your own subscription. If you do not want to set them up for now, you can ignore, and the application runs regardless.
 
+### Setup Availability Monitoring
+
+1. Open Application Insights in Azure
+2. Select Availability
+3. Create new Test and configure to monitor
+
+Alert email is sent to specified receiver when the web is not available.
+![Alert Email](ReadMeImages/AlertEmailSample.PNG)
+
+Healthy email is sent to specified receiver when the web is back available.
+![Healthy Email](ReadMeImages/HealthyEmailSample.PNG)
+
+Availability test result is accessible proactively in Azure Portal.
+![Availability Monitoring](ReadMeImages/AvailabilityMonitoringSummary.PNG)
+
 ### Additional Custom Logging to Application Insights from MVC Web Application
 
 1. Create new Application Insights or add Application Insights from Web Appliation.
@@ -84,20 +99,9 @@ Properties --> INSTRUMENTATION KEY --> Copy to notepad
 ..\petowners\petowners\web.config --> <configuration> --> <appSettings> --> Update Value of "TelemetryKey"
 ```
 
-### Setup Availability Monitoring
+Track and Tracing Sample
+![Track and Tracing](ReadMeImages/TraceAndTracking.PNG)
 
-1. Open Application Insights in Azure
-2. Select Availability
-3. Create new Test and configure to monitor
-
-Alert email is sent to specified receiver when the web is not available.
-![Alert Email](ReadMeImages/AlertEmailSample.PNG)
-
-Healthy email is sent to specified receiver when the web is back available.
-![Healthy Email](ReadMeImages/HealthyEmailSample.PNG)
-
-Availability test result is accessible proactively in Azure Portal.
-![Availability Monitoring](ReadMeImages/AvailabilityMonitoringSummary.PNG)
 
 ## Deployment
 
