@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using PetOwners.Const;
+using System.Web.Mvc;
 
 namespace PetOwners.Controllers
 {
@@ -14,7 +15,7 @@ namespace PetOwners.Controllers
         [HandleError]
         public ActionResult Index()
         {
-            return View();
+            return View(viewName: ViewNamne.Error);
         }
 
     }

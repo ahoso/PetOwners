@@ -33,14 +33,14 @@ namespace MVC_Client.Controllers
         /// <returns></returns>
         public ActionResult CatList()
         {
-            IEnumerable<Cat> cats;
+            IEnumerable<Cat> _cats;
             try
             {
                 // filter pet owners currently owns some pets
-                var owners = _iPetOwnerRepository.GetOwners().Where(i => i.Pets != null);
+                var _owners = _iPetOwnerRepository.GetOwners().Where(i => i.Pets != null);
 
                 // create new list with required fields on the page
-                cats = from owner in owners
+                _cats = from owner in _owners
                        from pet in owner.Pets
                        where pet.Type.ToLower() == "cat"
                        select new Cat
@@ -51,17 +51,22 @@ namespace MVC_Client.Controllers
             }
             catch(Exception ex)
             {
-                Dictionary<string, string> properties = new Dictionary<string, string>();
-                properties.Add(Logging.Location, "CatListController");
-                properties.Add(Logging.Message, ex.Message);
-                properties.Add(Logging.StackTrace, ex.StackTrace);
-                _telemetry.TrackException(ex, properties);
 
-                cats = null;
+                // Log exception in to application insights
+                Dictionary<string, string> _properties = new Dictionary<string, string>
+                    {
+                        { Logging.Location, "CatListController - CatList" },
+                        { Logging.Message, ex.Message },
+                        { Logging.StackTrace, ex.StackTrace }
+                    };
+                _telemetry.TrackException(ex, _properties);
+
+                _cats = null;
+
             }
 
             // return View
-            return (cats != null) ? View(viewName: "CatList", model: cats) : View("Error");
+            return (_cats != null) ? View(viewName: ViewNamne.CatList, model: _cats) : View(ViewNamne.Error);
         }
 
     }

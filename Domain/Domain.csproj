@@ -47,6 +47,7 @@
     <Compile Include="Interfaces\IDataAccessor.cs" />
     <Compile Include="Interfaces\IPetOwnerRepository.cs" />
     <Compile Include="Model\Cat.cs" />
+    <Compile Include="Model\ViewName.cs" />
     <Compile Include="Model\Logging.cs" />
     <Compile Include="Model\Owner.cs" />
     <Compile Include="Model\Pet.cs" />

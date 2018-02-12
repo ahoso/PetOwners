@@ -19,11 +19,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "DataAccess\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.WebApi", "WebApiAdapter\DataAccess.WebApi.csproj", "{5B098BE1-92BE-403B-87EC-32C5BD1074F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.WebApi.Tests", "DataAccess.WebApi.Tests\DataAccess.WebApi.Tests.csproj", "{52A3A872-067B-4AFD-A653-ABC763BE9A60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.DataAccess.WebApi.Test", "DataAccess.WebApi.Tests\Unit.DataAccess.WebApi.Test.csproj", "{52A3A872-067B-4AFD-A653-ABC763BE9A60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests", "Repository.Tests\Repository.Tests.csproj", "{7EF1E2B2-88EC-4FD7-A204-E70C36D0BC62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.Repository.Test", "Repository.Tests\Unit.Repository.Test.csproj", "{7EF1E2B2-88EC-4FD7-A204-E70C36D0BC62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Tests", "Web.Tests\Web.Tests.csproj", "{B23070FC-AAF5-4905-9D2C-D4AD8E825E33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.Web.Test", "Web.Tests\Unit.Web.Test.csproj", "{B23070FC-AAF5-4905-9D2C-D4AD8E825E33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{50A2B788-154C-4FD0-9862-070E93C7F19D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.WebApi.IntegrationTests", "DataAccess.WebApi.IntegrationTests\DataAccess.WebApi.IntegrationTests.csproj", "{AB652229-739A-4124-AC66-582E91329856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.IntegrationTests", "Domain.IntegrationTests\Domain.IntegrationTests.csproj", "{DFA6E899-E9F6-40B9-ACB3-F6D76E4DFF43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.IntegrationTests", "Repository.IntegrationTests\Repository.IntegrationTests.csproj", "{1EA774B6-D247-4BCE-803B-F587C63EED9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.IntegrationTests", "Web.IntegrationTests\Web.IntegrationTests.csproj", "{B7C21C7F-8005-47CC-81DD-FE90D1F2BFAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +69,22 @@ Global
 		{B23070FC-AAF5-4905-9D2C-D4AD8E825E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B23070FC-AAF5-4905-9D2C-D4AD8E825E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B23070FC-AAF5-4905-9D2C-D4AD8E825E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB652229-739A-4124-AC66-582E91329856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB652229-739A-4124-AC66-582E91329856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB652229-739A-4124-AC66-582E91329856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB652229-739A-4124-AC66-582E91329856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA6E899-E9F6-40B9-ACB3-F6D76E4DFF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA6E899-E9F6-40B9-ACB3-F6D76E4DFF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA6E899-E9F6-40B9-ACB3-F6D76E4DFF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA6E899-E9F6-40B9-ACB3-F6D76E4DFF43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA774B6-D247-4BCE-803B-F587C63EED9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA774B6-D247-4BCE-803B-F587C63EED9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA774B6-D247-4BCE-803B-F587C63EED9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA774B6-D247-4BCE-803B-F587C63EED9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C21C7F-8005-47CC-81DD-FE90D1F2BFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C21C7F-8005-47CC-81DD-FE90D1F2BFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C21C7F-8005-47CC-81DD-FE90D1F2BFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C21C7F-8005-47CC-81DD-FE90D1F2BFAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +97,11 @@ Global
 		{52A3A872-067B-4AFD-A653-ABC763BE9A60} = {30020749-8E3C-43B9-A204-B1112DF3D87B}
 		{7EF1E2B2-88EC-4FD7-A204-E70C36D0BC62} = {30020749-8E3C-43B9-A204-B1112DF3D87B}
 		{B23070FC-AAF5-4905-9D2C-D4AD8E825E33} = {30020749-8E3C-43B9-A204-B1112DF3D87B}
+		{50A2B788-154C-4FD0-9862-070E93C7F19D} = {30020749-8E3C-43B9-A204-B1112DF3D87B}
+		{AB652229-739A-4124-AC66-582E91329856} = {50A2B788-154C-4FD0-9862-070E93C7F19D}
+		{DFA6E899-E9F6-40B9-ACB3-F6D76E4DFF43} = {50A2B788-154C-4FD0-9862-070E93C7F19D}
+		{1EA774B6-D247-4BCE-803B-F587C63EED9F} = {50A2B788-154C-4FD0-9862-070E93C7F19D}
+		{B7C21C7F-8005-47CC-81DD-FE90D1F2BFAB} = {50A2B788-154C-4FD0-9862-070E93C7F19D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {766DB200-B30A-467D-A9FD-6568B0F21FFB}

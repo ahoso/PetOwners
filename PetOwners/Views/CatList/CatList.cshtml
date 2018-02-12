@@ -7,26 +7,30 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" charset="utf-8" content="width=device-width" />
+    <!-- Page Title -->
     <title>Cat List</title>
+    <!-- Scripts and Styles -->
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/functions.js"></script>
     <link href="~/Styles/CustomStyleSheet.css" rel="stylesheet" />
-
-
 </head>
 <body>
-
-    <h1>AGL Coding Challenge</h1>
-    <h3>Requirement</h3>
-    <p>Output a list of all the cats in alphabetical order under a heading of the gender of their owner.</p>
-    <h3>Result</h3>
-    <div id="catList"></div>
-
+    <section id="Program Header">
+        <h1>AGL Coding Challenge</h1>
+    </section>
+    <section id="Requirement">
+        <h3>Requirement</h3>
+        <p>Output a list of all the cats in alphabetical order under a heading of the gender of their owner.</p>
+    </section>
+    <section id="Result">
+        <h3>Result</h3>
+        <div id="catList"></div>
+    </section>
     <script type="text/javascript">
 
         $(document).ready()
@@ -42,6 +46,7 @@
         };
 
     </script>
+
 </body>
 
 </html>

@@ -30,7 +30,7 @@ function DisplayCatList(listOwnerGenders, listAll)
         listCats.sort(SortByName);
     
         // loop through appending cat's name to the list 
-        var catNames = "<ul class='dotList'>";
+        var catNames = "<ul>";
         $.each(listCats, function (idx, cat) {
             catNames += "<li>" + cat.Name + "</li>";
         });
@@ -48,3 +48,4 @@ function DisplayCatList(listOwnerGenders, listAll)
 function SortByName(x, y) {
     return ((x.Name == y.Name) ? 0 : ((x.Name > y.Name) ? 1 : -1));
 }
+

@@ -18,14 +18,14 @@ namespace PetOwners
         /// <returns></returns>
         public static IUnityContainer InitialiseContainer()
         {
-            var container = new UnityContainer();
+            var _container = new UnityContainer();
 
             // Register type's mappings
-            container.RegisterType<IPetOwnerRepository, PetOwnerRepository>();
-            container.RegisterType<IDataAccessor, AglPeopleWebApiAccessor>();
+            _container.RegisterType<IPetOwnerRepository, PetOwnerRepository>();
+            _container.RegisterType<IDataAccessor, AglPeopleWebApiAccessor>();
 
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
-            return container;
+            DependencyResolver.SetResolver(new UnityDependencyResolver(_container));
+            return _container;
         }
     }
 }

@@ -23,20 +23,20 @@ namespace DataAccess.WebApi
         private static readonly string WebApiUrl = ConfigurationManager.AppSettings["WebApiUrl"].ToString();
 
         // HttpClient
-        HttpClient client;
+        HttpClient _client;
 
         /// <summary>
         /// Constructor: set up HttpClient
         /// </summary>
         public AglPeopleWebApiAccessor()
         {
-            client = new HttpClient
+            _client = new HttpClient
             {
                 // set WebAPI URL.
                 BaseAddress = new Uri(uriString: WebApiUrl)
             };
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(item: new MediaTypeWithQualityHeaderValue(MediaType));
+            _client.DefaultRequestHeaders.Accept.Clear();
+            _client.DefaultRequestHeaders.Accept.Add(item: new MediaTypeWithQualityHeaderValue(MediaType));
         }
 
         /// <summary>
@@ -45,26 +45,28 @@ namespace DataAccess.WebApi
         /// <returns></returns>
         public IEnumerable<Owner> GetOwners()
         {
-            using (var httpClient = new HttpClient())
+            using (var _httpClient = new HttpClient())
             {
                 // Get information from WebAPI
                 try
                 {
-                    client.GetAsync(WebApiUrl).Result.EnsureSuccessStatusCode();
-                    var result = client.GetAsync(WebApiUrl).Result.Content.ReadAsStringAsync().Result;
-                    var serializedResult = JsonConvert.DeserializeObject<List<Owner>>(result);
+                    _client.GetAsync(WebApiUrl).Result.EnsureSuccessStatusCode();
+                    var _result = _client.GetAsync(WebApiUrl).Result.Content.ReadAsStringAsync().Result;
+                    var _serializedResult = JsonConvert.DeserializeObject<List<Owner>>(_result);
 
                     // return serialized result, unless result is null.
-                    return serializedResult ?? null;
+                    return _serializedResult ?? null;
                 }
                 catch (Exception ex)
                 {
                     // Log exception in to application insights
-                    Dictionary<string, string> properties = new Dictionary<string, string>();
-                    properties.Add(Logging.Location, "AglPeopleWebApiAccessorn - GetOwner");
-                    properties.Add(Logging.Message, ex.Message);
-                    properties.Add(Logging.StackTrace, ex.StackTrace);
-                    _telemetry.TrackException(ex, properties);
+                    Dictionary<string, string> _properties = new Dictionary<string, string>
+                    {
+                        { Logging.Location, "AglPeopleWebApiAccessorn - GetOwner" },
+                        { Logging.Message, ex.Message },
+                        { Logging.StackTrace, ex.StackTrace }
+                    };
+                    _telemetry.TrackException(ex, _properties);
 
                     throw new Exception("Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message);
                 }
