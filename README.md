@@ -13,23 +13,34 @@ The programming language is open to a developer, so I choosed technologies below
 
 * Approach: Onion Architecture for unit test friendly, easy to extend with it's loose coupling, and cross cutting concerns.
 * Language: .net framework 4+ with MVC 5+ Web Application model along with jquery 3+, html 5 and css 3. 
-* Dependency Injection: Unity Framework
-* Testing: Visual Studio Testing Framework/NUnit
+* Dependency Injection: Unity 5+
+* Testing: NUnit 3+, Moq 4+
 * IDE: Visual Studio Enterprise 2017
 * Deployment: Azure Web Application http://petownermvc.azurewebsites.net/
 * Monitoring/Logging: Azure Application Insights
 
-## Packages Used
+## Used Dll Versions
 
 * jQuery v3.3.1
 * Microsoft.ApplicationInsights v2.5.0
 * Microsoft.AspNet.Mvc v5.2.3
 * Microsoft.AspNet.Razor v3.2.3
 * Microsoft.AspNet.WebPage v3.2.3
+* Microsoft.CodeCoverage v1.0.3
 * Microsoft.CodeDom.Provider.DotNetComplerPlatform v1.0.8
 * Microsoft.Net.Compilers v2.6.1
+* Microsoft.NET.Test.Sdk v15.5.0
+* Microsoft.TestPlatform.TestHost v15.5.0
 * Microsoft.Web.Infrastructure v1.0.0
+* Moq v4.8.1
 * Newtonsoft_Json 10.0.3
+* NUnit v3.9.0
+* NUnit.ConsoleRunner v3.8.0
+* NUnit.Extension.NUnitProjectLoader v3.6.0
+* NUnit.Extension.NUnitV2Driver v3.7.0
+* NUnit.Extension.NUnitV2ResultWriter v3.6.0
+* NUnit.Extension.TEeamCityEventListener v1.0.3
+* NUnit.Extension.VSProjectLoader v3.7.0
 * System.Diagnostics.DiagnosticSource v4.4.0
 * System.Net.Http v4.3.3
 * System.Security.Cryptography.Algorithms v4.3.1
@@ -44,19 +55,8 @@ The programming language is open to a developer, so I choosed technologies below
 
 ## Testing
 
-### Unit
-Unit Tests are set up using Visual Studio Testing Framework.
-Here's how to run unit test.
-```
-Test --> Run --> All Tests
-```
-Or you can set live unit testing
-```
-Test --> Live Unit Testing --> Start
-```
-
-### Integration
-### Browser Testing
+ ### Unit
+Unit Tests are set up and implemented using NUnit with Moq.
 
 ## Logging and Monitoring
 
@@ -106,7 +106,8 @@ Track and Tracing Sample
 
 ## Deployment
 
-This website is published to http://petownermvc.azurewebsites.net/
+Publiched to: http://petownermvc.azurewebsites.net/
+COnfiguration: Release
 
 ## Source Controll
 
