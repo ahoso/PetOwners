@@ -1,19 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Repository;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PetOwners.Core.Domain;
-using Moq;
-
+using NUnit.Framework;
+using Mocks;
 namespace Repository.Tests
 {
     /// <summary>
     /// Test PetOwnerRepository with Mock
     /// </summary>
-    [TestClass()]
+    [TestFixture()]
     public class PetOwnerRepositoryTests
     {
         /// <summary>
@@ -21,37 +16,17 @@ namespace Repository.Tests
         /// </summary>
         public IPetOwnerRepository _repository;
 
-        public PetOwnerRepositoryTests()
+        [SetUp]
+        public void Setup()
         {
-            // create some mock pet owners to play with
-            IEnumerable<Owner> owners = new List<Owner>
-                {
-                    new Owner { Name = "James", Age = 33, Gender = "Male", Pets = GetJamesPets()},
-                    new Owner { Name = "Chris", Age = 34, Gender = "Male", Pets = GetChrisPets()},
-                    new Owner { Name = "Mary", Age = 31, Gender = "Female", Pets = GetMaryPets()}
-                };
-
-            // Mock the PetOwner Repository 
-            Mock<IPetOwnerRepository> mockProductRepository = new Mock<IPetOwnerRepository>();
-
-            // Return all the pet owners
-            mockProductRepository.Setup(mr => mr.GetOwners()).Returns(owners);
-
-            // Complete the setup of Mock Repository
-            _repository = mockProductRepository.Object;
-
+            // set up mock oject
+            _repository = MockPetOwnerRepository.SetUpMock().Object;
         }
-
-        // private methods to set pets for Mock owners
-        private IEnumerable<Pet> GetJamesPets() => new List<Pet> { new Pet { Name = "Black", Type = "Sheep" } };
-        private IEnumerable<Pet> GetChrisPets() => new List<Pet> { new Pet { Name = "Coco", Type = "Cow" } };
-        private IEnumerable<Pet> GetMaryPets() => new List<Pet> { new Pet { Name = "Mocha", Type = "Cat" } };
-
         /// <summary>
-        /// Test if all pet owners can be returned
+        /// Test if all pet owners can be returned from Mock
         /// </summary>
-        [TestMethod]
-        public void CanGetOwnersTest()
+        [TestCase]
+        public void GetOwnersTest()
         {
             // Try finding all products
             IEnumerable<Owner> testOwners = _repository.GetOwners();
@@ -59,10 +34,10 @@ namespace Repository.Tests
         }
 
         /// <summary>
-        /// Test if all pet can be returned with Owners
+        /// Test if all pet can be returned with Owners from Mock
         /// </summary>
-        [TestMethod]
-        public void CanGetPetsTest()
+        [TestCase]
+        public void GetPetsTest()
         {
             // Try finding all products
             IEnumerable<Owner> testOwners = _repository.GetOwners();
