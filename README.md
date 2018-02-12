@@ -11,7 +11,7 @@ The programming language is open to a developer, so I choosed technologies below
 * Unit Test: Visual Studio Testing Framework
 * IDE: Visual Studio Enterprise 2017
 * Deployment: Azure Web Application http://petownermvc.azurewebsites.net/
-* Monitoring/Logging: Azure Application Insights with availability test setup
+* Monitoring/Logging: Azure Application Insights
 
 ## Getting Started
 
@@ -42,6 +42,7 @@ Download solution and open solution file.
 
 ## Testing
 
+### Unit
 Unit Tests are set up using Visual Studio Testing Framework.
 Here's how to run unit test.
 ```
@@ -51,15 +52,22 @@ Or you can set live unit testing
 ```
 Test --> Live Unit Testing --> Start
 ```
+
+###Integration
+### Spec
+
 ## Logging and Monitoring
 
-Azure Application Insights: ai_petowners_mvc
+Azure Application Insights: ai_petowners_mvc (private subscription)
+* Logging exceptions, alerts, and custom information
+* Availability monitoring
+* Performance monitoring
 
 If you want to set up error logging and availability monitoring in Azure, you need to setup your own Application Insights on your own subscription. If you do not want to set them up for now, you can ignore, and the application runs regardless.
 
 ### Setup Azure Application Insights
 
-1. Create Application Insights
+1. Create new Application Insights or add Application Insights from Web Appliation.
 ```
 New --> Search Application Insights --> Create Application Insights --> fill up information --> hit Create button 
 ```
@@ -71,6 +79,14 @@ Properties --> INSTRUMENTATION KEY --> Copy to notepad
 ```
 ..\petowners\petowners\web.config --> <configuration> --> <appSettings> --> Update Value of "TelemetryKey"
 ```
+
+### Setup Availability Monitoring
+
+1. Open Application Insights in Azure
+2. Select Availability
+3. Create new Test and configure 
+
+![alt text](screenshots/AvailabilityMonitoring.png "Monitoring...")
 
 ## Deployment
 
