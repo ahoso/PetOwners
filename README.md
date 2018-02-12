@@ -61,7 +61,7 @@ Unit Tests are set up and implemented using NUnit with Moq.
 To make tests avaiable and visualise in Test Explorer, used NUnit Test Adapter.
 
 #### Test Result
-![Unit Test Result](ReadMeImages/TestResult.PNG)
+![Unit Test Result](ReadMeImages/UnitTestResult.PNG)
 
 #### Test Coverage
 ![Unit Test Coverage](ReadMeImages/TestCoverage.PNG)
