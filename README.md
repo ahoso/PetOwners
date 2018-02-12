@@ -22,6 +22,7 @@ The programming language is open to a developer, so I choosed technologies below
 ## Projects structure
 
 Here's conceptual structure of the projects.
+
 ![Onion Approach](ReadMeImages/OnionApproach.PNG)
 
 ## Used Dll Versions
