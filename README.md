@@ -5,7 +5,7 @@ The requirement is to write some code to consume the JSON result from API(http:/
 
 Required Output Example
 
-![Output Example](ReadMeImages/WebScreenShot.PNG)
+![Output Example](ReadMeImages/OutputExample.PNG)
 
 ## Technologies Used
 
