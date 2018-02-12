@@ -56,11 +56,13 @@ Test --> Live Unit Testing --> Start
 ```
 
 ### Integration
-### 
+### Browser Testing
 
 ## Logging and Monitoring
 
-Azure Application Insights: ai_petowners_mvc (private subscription)
+Azure Application Insights provides proactive alert and monitoring mechanism.
+Some simple monitoring and alert functions implemented for this project.
+
 * Logging exceptions, alerts, and custom information
 * Availability monitoring
 * Performance monitoring
