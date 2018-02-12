@@ -84,7 +84,16 @@ Properties --> INSTRUMENTATION KEY --> Copy to notepad
 
 1. Open Application Insights in Azure
 2. Select Availability
-3. Create new Test and configure 
+3. Create new Test and configure to monitor
+
+Alert email is sent to specified receiver when the web is not available.
+![Alert Email](PetOwners/ReadMeImages/AlertEmailSample.PNG)
+
+Healthy email is sent to specified receiver when the web is back available.
+![Healthy Email](PetOwners/ReadMeImages/HealthyEmailSample.PNG)
+
+Availability test result is accessible proactively in Azure Portal.
+![Availability Monitoring](PetOwners/ReadMeImages/AvailabilityMonitoringSummary.PNG)
 
 ## Deployment
 
