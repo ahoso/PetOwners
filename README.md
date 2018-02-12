@@ -17,7 +17,7 @@ The programming language is open to a developer, so I choosed technologies below
 
 Download solution and open solution file.
 
-### Packages Required
+### Additional Packages Required
 
 * jQuery v3.3.1
 * Microsoft.ApplicationInsights v2.5.0
