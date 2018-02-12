@@ -86,8 +86,6 @@ Properties --> INSTRUMENTATION KEY --> Copy to notepad
 2. Select Availability
 3. Create new Test and configure 
 
-![Availability Monitoring](https://github.com/ahoso/PetOwners/blob/master/READMEImages/AvailabilityMonitoring.PNG "Monitoring...")
-
 ## Deployment
 
 This website is published to http://petownermvc.azurewebsites.net/
