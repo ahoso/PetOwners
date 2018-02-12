@@ -19,6 +19,30 @@ The programming language is open to a developer, so I choosed technologies below
 * Deployment: Azure Web Application http://petownermvc.azurewebsites.net/
 * Monitoring/Logging: Azure Application Insights
 
+## Projects structure
+
+* Core
+  - Domain
+    -- Models
+       --- Owner
+       --- Pet
+        ---- Cat
+  - Interfaces
+    -- DataAdapter Interface
+    -- Repository Interface
+  
+* Infrastructure
+    -- DataAdapter Implementation
+    -- Repository Implementation
+* UI
+    -- Web
+       --- MVC Application
+* Test
+    -- Unit Tests
+       -- Core Unit Test
+       -- Infrastructure Unit Test
+       -- UI Unit Test
+
 ## Used Dll Versions
 
 * jQuery v3.3.1
