@@ -18,6 +18,7 @@ namespace Repository.Tests
         private Owner _owner = new Owner();
         private IList<Pet> _pets = new List<Pet>();
 
+
         // default constructor
         public Owner Owner { get => _owner; set => _owner = value; }
         public IList<Pet> Pets { get => _pets; set => _pets = value; }
@@ -52,13 +53,5 @@ namespace Repository.Tests
             Assert.AreEqual(Owner.Gender, "Female");
         }
 
-        /// <summary>
-        /// Test Pets
-        /// </summary>
-        [TestCase]
-        public void GetSetPetsrTest()
-        {
-            Assert.NotNull(Owner);
-        }
     }
 }
