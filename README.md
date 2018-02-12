@@ -3,7 +3,9 @@
 This project has been commenced to submit some code to AGL Coding challenge.
 The requirement is to write some code to consume the JSON result from API(http://agl-developer-test.azurewebsites.net/people.json), and output a list of all the cats' name in alphabetical order under a heading of the gender of their owner.
 
-![Output List](ReadMeImages/WebScreenShot.PNG)
+Required Output Example
+
+![Output Example](ReadMeImages/WebScreenShot.PNG)
 
 The programming language is open to a developer, so I choosed technologies below to demonstrate my experience and knowledge with those techonologies.
 
