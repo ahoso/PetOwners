@@ -12,7 +12,7 @@ Required Output Example
 The programming language is open to a developer, so I choosed technologies below to demonstrate my experience and knowledge with those techonologies.
 
 * Approach: Onion Architecture for unit test friendly, easy to extend with it's loose coupling, and cross cutting concerns.
-* Language: .net framework 4+ with MVC 5+ Web Application model along with jquery 3+, html 5 and css 3 base. 
+* Language: .net framework 4+ with MVC 5+ Web Application model along with jquery 3+, on html 5 and css 3 base. 
 * Dependency Injection: Unity 5+
 * Testing: NUnit 3+, Moq 4+
 * IDE: Visual Studio Enterprise 2017
