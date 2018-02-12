@@ -39,8 +39,9 @@ The programming language is open to a developer, so I choosed technologies below
 * NUnit.Extension.NUnitProjectLoader v3.6.0
 * NUnit.Extension.NUnitV2Driver v3.7.0
 * NUnit.Extension.NUnitV2ResultWriter v3.6.0
-* NUnit.Extension.TEeamCityEventListener v1.0.3
+* NUnit.Extension.TeeamCityEventListener v1.0.3
 * NUnit.Extension.VSProjectLoader v3.7.0
+* NUnit3TestAdapter v3.9.0
 * System.Diagnostics.DiagnosticSource v4.4.0
 * System.Net.Http v4.3.3
 * System.Security.Cryptography.Algorithms v4.3.1
@@ -57,6 +58,13 @@ The programming language is open to a developer, so I choosed technologies below
 
  ### Unit
 Unit Tests are set up and implemented using NUnit with Moq.
+To make tests avaiable and visualise in Test Explorer, used NUnit Test Adapter.
+
+#### Test Result
+![Unit Test Result](ReadMeImages/UnitTestResult.PNG)
+
+#### Test Coverage
+![Unit Test Coverage](ReadMeImages/TestCoverage.PNG)
 
 ## Logging and Monitoring
 
