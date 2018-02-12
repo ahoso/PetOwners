@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Mocks
 {
-    public class MockPetOwnerRepository
+    public class MockDataAccessor
     {
-        public static Mock<IPetOwnerRepository> SetUpMock()
+        public static Mock<IDataAccessor> SetUpMock()
         {
             // create some mock pet owners to play with
             IEnumerable<Owner> owners = new List<Owner>
@@ -17,18 +17,18 @@ namespace Mocks
                 };
 
             // Mock the Web API data access 
-            Mock<IPetOwnerRepository> mockAglPeopleWebApiAccessor = new Mock<IPetOwnerRepository>();
+            Mock<IDataAccessor> mockAglPeopleWebApiAccessor = new Mock<IDataAccessor>();
 
             // Return all the pet owners
             mockAglPeopleWebApiAccessor.Setup(mr => mr.GetOwners()).Returns(owners);
 
-            // return seup web api accessor
+            // Return set up mock repository
             return mockAglPeopleWebApiAccessor;
         }
         // private methods to set pets for Mock owners
         private static IEnumerable<Pet> GetJamesPets() => new List<Pet> { new Pet { Name = "Black", Type = "Sheep" } };
         private static IEnumerable<Pet> GetChrisPets() => new List<Pet> { new Pet { Name = "Coco", Type = "Cow" } };
-        private static IEnumerable<Pet> GetMaryPets() => new List<Pet> { new Pet { Name = "Mocha", Type = "Turtle" } };
+        private static IEnumerable<Pet> GetMaryPets() => new List<Pet> { new Pet { Name = "Mocha", Type = "Cat" } };
 
     }
 }

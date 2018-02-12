@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using PetOwners.Core.Domain;
 
-namespace Domain.Tests
+namespace Domain.Test
 {
 
     /// <summary>
