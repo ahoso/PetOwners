@@ -118,10 +118,12 @@ Tracking and Tracing Sample
 ![Track and Tracing](ReadMeImages/TraceAndTracking.PNG)
 
 
-## Deployment
+## Hosting
 
-Published to: http://petownermvc.azurewebsites.net/
+Azure Web Service
 Configuration: Release
+
+* http://petownermvc.azurewebsites.net/
 
 ## Source Controll
 
