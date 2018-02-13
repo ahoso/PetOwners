@@ -23,7 +23,7 @@ The programming language is open to a developer, so I choosed technologies below
 
 Here's conceptual structure of the projects using Onion Architecture Design.
 Dependencies exist from Core <-- Infrastructure, Core <-- UI/Test, Infrastructure <-- UI/Test loosely coupled each other by interface.
-Each components are independently testable.
+Each components is independently testable.
 
 ![Onion Approach](ReadMeImages/OnionApproach.PNG)
 
