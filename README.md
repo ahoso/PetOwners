@@ -1,4 +1,4 @@
- # AGL Coding Challenge
+ # AGL Coding Challenge - Project PetOwners
 
 This project has been commenced to submit some code to AGL Coding challenge.
 The requirement is to write some code to consume the JSON result from API(http://agl-developer-test.azurewebsites.net/people.json), and output a list of all the cats' name in alphabetical order under a heading of the gender of their owner.
@@ -9,19 +9,21 @@ Required Output Example
 
 ## Technologies Used
 
-The programming language is open to a developer, so I choosed technologies below to demonstrate my experience and knowledge with those techonologies.
+The programming language is open to a developer, so I choosed technologies below to demonstrate my experience and knowledge.
 
 * Approach: Onion Architecture for unit test friendly, easy to extend with it's loose coupling, and cross cutting concerns.
 * Language: .net framework 4+ with MVC 5+ Web Application model along with jquery 3+, on html 5 and css 3 base. 
-* Dependency Injection: Unity 5+
+* Dependency Injection: Unity 5+ 
 * Testing: NUnit 3+, Moq 4+
 * IDE: Visual Studio Enterprise 2017
-* Deployment: Azure Web Application http://petownermvc.azurewebsites.net/
+* Deployment: Azure Web Application 
 * Monitoring/Logging: Azure Application Insights
 
 ## Projects structure
 
-Here's conceptual structure of the projects.
+Here's conceptual structure of the projects using Onion Architecture Design.
+Dependencies exist from Core <-- Infrastructure, Core <-- UI/Test, Infrastructure <-- UI/Test loosely coupled each other by interface.
+Each components are independently testable.
 
 ![Onion Approach](ReadMeImages/OnionApproach.PNG)
 
