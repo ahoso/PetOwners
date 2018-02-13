@@ -25,6 +25,11 @@ Here's conceptual structure of the projects.
 
 ![Onion Approach](ReadMeImages/OnionApproach.PNG)
 
+External
+* Monitoring
+* Logging
+* Alert Notifications
+
 ## Used Dll Versions
 
 * jQuery v3.3.1
