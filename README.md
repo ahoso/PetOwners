@@ -125,7 +125,11 @@ Configuration: Release
 
 ## Source Controll
 
-GitHub: https://github.com/ahoso/PetOwners/
+GitHub
+Account : ahoso
+Repository : PetOwners
+
+* https://github.com/ahoso/PetOwners/
 
 ## Author
 
