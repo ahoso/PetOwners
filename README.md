@@ -1,11 +1,4 @@
- # AGL Coding Challenge - Project PetOwners
 
-This project has been commenced to submit some code to AGL Coding challenge.
-The requirement is to write some code to consume the JSON result from API(http://agl-developer-test.azurewebsites.net/people.json), and output a list of all the cats' name in alphabetical order under a heading of the gender of their owner.
-
-Required Output Example
-
-![Output Example](ReadMeImages/OutputExample.PNG)
 
 ## Technologies Used
 
